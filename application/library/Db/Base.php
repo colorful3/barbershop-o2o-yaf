@@ -51,7 +51,7 @@ class Db_Base
      */
     function __call($name, $arguments)
     {
-        return self::$_db->$name($arguments[0]);
+        return @self::$_db->$name($arguments[0]);
     }
 
     /**

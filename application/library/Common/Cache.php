@@ -33,7 +33,7 @@ class Common_Cache {
         return self::$_instance;
     }
 
-    /**
+   /**
      * 魔术方法，方法重载
      * @param $name
      * @param $arguments
@@ -44,7 +44,7 @@ class Common_Cache {
         return self::$_link->$name($arguments[0]);
     }
 
-    /**
+   /**
      * 反序列化魔术方法
      */
     public function __wakeup()
@@ -52,7 +52,7 @@ class Common_Cache {
         self::$_instance = $this;
     }
 
-    /**
+   /**
      * 析构函数
      * @description 销毁实例
      */

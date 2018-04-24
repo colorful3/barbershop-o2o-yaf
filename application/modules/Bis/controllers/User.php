@@ -81,7 +81,7 @@ class UserController extends AbstractController
         if( !$last_id ) {
             Common_Request::response($model->errno, $model->errmsg);
         } else {
-            Common_Request::response(0, $uname);
+            Common_Request::response(0, '', $uname);
         }
     }
 

@@ -12,7 +12,7 @@ class AbstractController extends Yaf_Controller_Abstract
 
     protected $headers = [];
 
-    public function init()
+   public function init()
     {
         Yaf_Dispatcher::getInstance()->disableView();
         // $this->testAes();

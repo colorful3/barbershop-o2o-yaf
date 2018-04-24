@@ -49,7 +49,7 @@ class BisModel
         }
 
         if( Common_IAuth::pwdEncode($pwd, $user_info[0]['salt']) != $user_info[0]['pwd'] ) {
-            $this->errmsg = -1006;
+            $this->errno = -1006;
             $this->errmsg = "用户名或密码不正确";
             return false;
         }
