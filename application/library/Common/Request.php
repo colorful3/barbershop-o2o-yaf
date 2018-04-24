@@ -16,7 +16,7 @@ class Common_Request
 
     public function __construct()
     {
-        $this->request = new Yaf_Request_Http();
+        self::$request = new Yaf_Request_Http();
     }
 
     public static function get( $key, $value ) {

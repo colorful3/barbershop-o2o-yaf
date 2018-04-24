@@ -64,8 +64,7 @@ class Common_IAuth
         }
         // app_name=barbershop&time=152457827566&version=1.0
         parse_str($aes_str, $arr);
-        if(!is_array($arr) || empty($arr['app_name'])
-            || $arr['app_name'] != $data['app_name'] ) {
+        if(!is_array($arr) || empty($arr['appname']) || $arr['appname'] != $data['appname'] ) {
             return false;
         }
 
