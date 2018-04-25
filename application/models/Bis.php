@@ -74,6 +74,50 @@ class BisModel
     }
 
     /**
+     * 设置token
+     * @param $token
+     * @param $uid
+     * @return bool
+     */
+    public function setUserToken($token, $uid)
+    {
+
+        $query = Db_Base::getInstance()->prepare(
+            "UPDATE `bis_account` SET `token` = ?, `token_timeout` = ? WHERE `id` =? "
+        );
+        $ret = $query->execute([$token, date('Y-m-d H:i:s', time() + 604800 ), $uid]);
+        if( !$ret ) {
+            $this->errno = -1008;
+            $this->errmsg = '设置token失败';
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    /**
+     * 根据用户token和uid获取用户详情
+     * @param $token
+     * @param $uid
+     * @return bool
+     */
+    public function getUserByToken( $token, $uid )
+    {
+        $query = Db_Base::getInstance()->prepare(
+            "SELECT * FROM `bis_account` WHERE `token` = ? AND `id` = ?"
+        );
+        $query->execute([$token, $uid]);
+        $res = $query->fetchAll();
+        if( !$res || $res[0]['status'] != 'normal' ) {
+            $this->errno = -1009;
+            $this->errmsg = '获取用户失败';
+            return false;
+        } else {
+            return $res[0];
+        }
+    }
+
+    /**
      * 验证用户是否存在
      * @param $uname
      * @param $email

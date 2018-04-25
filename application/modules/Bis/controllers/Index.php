@@ -6,7 +6,7 @@
  * Time:上午10:59
  */
 
-class IndexController extends AbstractController {
+class IndexController extends AuthBaseController {
 
     public function indexAction() {
         echo 'this is index action in Bis module';

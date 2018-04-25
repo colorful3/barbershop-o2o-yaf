@@ -15,8 +15,30 @@
       <file leaf-file-name="User.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/modules/Bis/controllers/User.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="367">
+              <caret line="81" column="8" lean-forward="false" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Index.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/modules/Bis/controllers/Index.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="286">
+              <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+              <folding>
+                <element signature="e#6#83#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.ini" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/conf/application.ini">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="418">
+              <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -25,17 +47,31 @@
       <file leaf-file-name="Bis.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/models/Bis.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="31" />
+            <state relative-caret-position="2376">
+              <caret line="108" column="39" lean-forward="false" selection-start-line="108" selection-start-column="39" selection-end-line="108" selection-end-column="39" />
               <folding>
-                <marker date="1524614767000" expanded="true" signature="508:598" ph="INSERT into `bis_account`... " />
-                <marker date="1524614767000" expanded="true" signature="508:610" ph="INSERT INTO `bis_account`... " />
-                <marker date="1524614767000" expanded="true" signature="514:598" ph="insert into `bis_account`... " />
-                <marker date="1524614767000" expanded="true" signature="1025:1088" ph="SELECT * fro... bis_account" />
-                <marker date="1524614767000" expanded="true" signature="1025:1100" ph="SELECT * fro... bis_account" />
-                <marker date="1524614767000" expanded="true" signature="1025:1103" ph="SELECT * fro... bis_account" />
-                <marker date="1524614767000" expanded="true" signature="1744:1826" ph="UPDATE `bis_... " />
-                <marker date="1524614767000" expanded="true" signature="2320:2393" ph="SELECT COUNT... bis_account" />
+                <marker date="1524618661000" expanded="true" signature="508:598" ph="INSERT into `bis_account`... " />
+                <marker date="1524618661000" expanded="true" signature="508:610" ph="INSERT INTO `bis_account`... " />
+                <marker date="1524618661000" expanded="true" signature="514:598" ph="insert into `bis_account`... " />
+                <marker date="1524618661000" expanded="true" signature="1025:1088" ph="SELECT * fro... bis_account" />
+                <marker date="1524618661000" expanded="true" signature="1025:1100" ph="SELECT * fro... bis_account" />
+                <marker date="1524618661000" expanded="true" signature="1025:1103" ph="SELECT * fro... bis_account" />
+                <marker date="1524618661000" expanded="true" signature="1744:1826" ph="UPDATE `bis_... " />
+                <marker date="1524618661000" expanded="true" signature="2331:2402" ph="UPDATE `bis_... " />
+                <marker date="1524618661000" expanded="true" signature="2908:2966" ph="SELECT * FRO... bis_account" />
+                <marker date="1524618661000" expanded="true" signature="3467:3540" ph="SELECT COUNT... bis_account" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IAuth.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/library/Common/IAuth.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="496">
+              <caret line="98" column="57" lean-forward="false" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
+              <folding>
+                <element signature="e#6#99#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -44,21 +80,19 @@
       <file leaf-file-name="Abstract.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/controllers/Abstract.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="66" column="33" lean-forward="false" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="33" />
+            <state relative-caret-position="154">
+              <caret line="7" column="56" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="56" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IAuth.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/application/library/Common/IAuth.php">
+      <file leaf-file-name="AuthBase.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/application/controllers/AuthBase.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-234">
-              <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
-              <folding>
-                <element signature="e#6#99#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="154">
+              <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="24" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -93,22 +127,23 @@
         <option value="$PROJECT_DIR$/application/modules/Index/controllers/Index.php" />
         <option value="$PROJECT_DIR$/application/library/Common/AbstractController.php" />
         <option value="$PROJECT_DIR$/application/library/Common/Abstract.php" />
-        <option value="$PROJECT_DIR$/application/modules/Bis/controllers/Index.php" />
         <option value="$PROJECT_DIR$/application/library/Err/Map.php" />
         <option value="$PROJECT_DIR$/application/modules/Bis/models/User.php" />
         <option value="$PROJECT_DIR$/application/models/User.php" />
         <option value="$PROJECT_DIR$/application/library/Common/Aes.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/application/library/Common/Request.php" />
-        <option value="$PROJECT_DIR$/application/models/Bis.php" />
         <option value="$PROJECT_DIR$/application/library/Db/Base.php" />
         <option value="$PROJECT_DIR$/application/library/Common/Time.php" />
         <option value="$PROJECT_DIR$/application/controllers/Time.php" />
         <option value="$PROJECT_DIR$/application/library/Common/Catch.php" />
         <option value="$PROJECT_DIR$/application/library/Common/Cache.php" />
-        <option value="$PROJECT_DIR$/application/controllers/Abstract.php" />
         <option value="$PROJECT_DIR$/conf/application.ini" />
         <option value="$PROJECT_DIR$/application/library/Common/IAuth.php" />
+        <option value="$PROJECT_DIR$/application/models/Bis.php" />
+        <option value="$PROJECT_DIR$/application/controllers/Abstract.php" />
+        <option value="$PROJECT_DIR$/application/controllers/AuthBase.php" />
+        <option value="$PROJECT_DIR$/application/modules/Bis/controllers/Index.php" />
         <option value="$PROJECT_DIR$/application/modules/Bis/controllers/User.php" />
       </list>
     </option>
@@ -182,7 +217,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="conf" />
+              <option name="myItemId" value="application" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -197,6 +232,58 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bis" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yaf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yaf" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bis" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yaf" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="yaf" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modules" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -347,12 +434,12 @@
       <workItem from="1522006472730" duration="2876000" />
       <workItem from="1522044983456" duration="256000" />
       <workItem from="1524536150573" duration="24635000" />
-      <workItem from="1524611807582" duration="1139000" />
+      <workItem from="1524611807582" duration="4893000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28906000" />
+    <option name="totallyTimeSpent" value="32660000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -411,14 +498,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/application/library/Common/Cache.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/library/Common/IAuth.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="880">
@@ -442,14 +521,16 @@
         <state relative-caret-position="1958">
           <caret line="89" column="5" lean-forward="true" selection-start-line="89" selection-start-column="5" selection-end-line="89" selection-end-column="5" />
           <folding>
-            <marker date="1524614767000" expanded="true" signature="508:598" ph="INSERT into `bis_account`... " />
-            <marker date="1524614767000" expanded="true" signature="508:610" ph="INSERT INTO `bis_account`... " />
-            <marker date="1524614767000" expanded="true" signature="514:598" ph="insert into `bis_account`... " />
-            <marker date="1524614767000" expanded="true" signature="1025:1088" ph="SELECT * fro... bis_account" />
-            <marker date="1524614767000" expanded="true" signature="1025:1100" ph="SELECT * fro... bis_account" />
-            <marker date="1524614767000" expanded="true" signature="1025:1103" ph="SELECT * fro... bis_account" />
-            <marker date="1524614767000" expanded="true" signature="1744:1826" ph="UPDATE `bis_... " />
-            <marker date="1524614767000" expanded="true" signature="2320:2393" ph="SELECT COUNT... bis_account" />
+            <marker date="1524618661000" expanded="true" signature="508:598" ph="INSERT into `bis_account`... " />
+            <marker date="1524618661000" expanded="true" signature="508:610" ph="INSERT INTO `bis_account`... " />
+            <marker date="1524618661000" expanded="true" signature="514:598" ph="insert into `bis_account`... " />
+            <marker date="1524618661000" expanded="true" signature="1025:1088" ph="SELECT * fro... bis_account" />
+            <marker date="1524618661000" expanded="true" signature="1025:1100" ph="SELECT * fro... bis_account" />
+            <marker date="1524618661000" expanded="true" signature="1025:1103" ph="SELECT * fro... bis_account" />
+            <marker date="1524618661000" expanded="true" signature="1744:1826" ph="UPDATE `bis_... " />
+            <marker date="1524618661000" expanded="true" signature="2331:2402" ph="UPDATE `bis_... " />
+            <marker date="1524618661000" expanded="true" signature="2908:2966" ph="SELECT * FRO... bis_account" />
+            <marker date="1524618661000" expanded="true" signature="3467:3540" ph="SELECT COUNT... bis_account" />
           </folding>
         </state>
       </provider>
@@ -524,13 +605,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/modules/Bis/controllers/Index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="35" lean-forward="true" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/models/Sample.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -601,29 +675,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/application.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="37" lean-forward="true" selection-start-line="7" selection-start-column="37" selection-end-line="7" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/library/Db/Base.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1144">
           <caret line="52" column="5" lean-forward="true" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application/library/Common/IAuth.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-234">
-          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
-          <folding>
-            <element signature="e#6#99#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -635,35 +691,73 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/application/models/Bis.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2376">
+          <caret line="108" column="39" lean-forward="false" selection-start-line="108" selection-start-column="39" selection-end-line="108" selection-end-column="39" />
+          <folding>
+            <marker date="1524618661000" expanded="true" signature="508:598" ph="INSERT into `bis_account`... " />
+            <marker date="1524618661000" expanded="true" signature="508:610" ph="INSERT INTO `bis_account`... " />
+            <marker date="1524618661000" expanded="true" signature="514:598" ph="insert into `bis_account`... " />
+            <marker date="1524618661000" expanded="true" signature="1025:1088" ph="SELECT * fro... bis_account" />
+            <marker date="1524618661000" expanded="true" signature="1025:1100" ph="SELECT * fro... bis_account" />
+            <marker date="1524618661000" expanded="true" signature="1025:1103" ph="SELECT * fro... bis_account" />
+            <marker date="1524618661000" expanded="true" signature="1744:1826" ph="UPDATE `bis_... " />
+            <marker date="1524618661000" expanded="true" signature="2331:2402" ph="UPDATE `bis_... " />
+            <marker date="1524618661000" expanded="true" signature="2908:2966" ph="SELECT * FRO... bis_account" />
+            <marker date="1524618661000" expanded="true" signature="3467:3540" ph="SELECT COUNT... bis_account" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/controllers/Abstract.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="66" column="33" lean-forward="false" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="33" />
+        <state relative-caret-position="154">
+          <caret line="7" column="56" lean-forward="false" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="56" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/application/models/Bis.php">
+    <entry file="file://$PROJECT_DIR$/application/library/Common/IAuth.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="20" column="31" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="31" />
+        <state relative-caret-position="496">
+          <caret line="98" column="57" lean-forward="false" selection-start-line="98" selection-start-column="57" selection-end-line="98" selection-end-column="57" />
           <folding>
-            <marker date="1524614767000" expanded="true" signature="508:598" ph="INSERT into `bis_account`... " />
-            <marker date="1524614767000" expanded="true" signature="508:610" ph="INSERT INTO `bis_account`... " />
-            <marker date="1524614767000" expanded="true" signature="514:598" ph="insert into `bis_account`... " />
-            <marker date="1524614767000" expanded="true" signature="1025:1088" ph="SELECT * fro... bis_account" />
-            <marker date="1524614767000" expanded="true" signature="1025:1100" ph="SELECT * fro... bis_account" />
-            <marker date="1524614767000" expanded="true" signature="1025:1103" ph="SELECT * fro... bis_account" />
-            <marker date="1524614767000" expanded="true" signature="1744:1826" ph="UPDATE `bis_... " />
-            <marker date="1524614767000" expanded="true" signature="2320:2393" ph="SELECT COUNT... bis_account" />
+            <element signature="e#6#99#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/controllers/AuthBase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/application.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="19" column="4" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/modules/Bis/controllers/Index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="13" column="1" lean-forward="true" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding>
+            <element signature="e#6#83#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/Bis/controllers/User.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+        <state relative-caret-position="367">
+          <caret line="81" column="8" lean-forward="false" selection-start-line="81" selection-start-column="8" selection-end-line="81" selection-end-column="8" />
           <folding />
         </state>
       </provider>

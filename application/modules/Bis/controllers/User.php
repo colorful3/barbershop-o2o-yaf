@@ -32,7 +32,27 @@ class UserController extends AbstractController
         if( !$uid ) {
             Common_Request::response($model->errno, $model->errmsg);
         }
-
+        // 设置token
+        $token = Common_IAuth::setAppLoginToken($uname);
+        $res = 0;
+        try {
+            // 根据uid更新用户token
+            $res = $model->setUserToken($token, $uid);
+        } catch (\Exception $exception) {
+            Common_Request::response( -1007, $exception->getMessage() );
+        }
+        if( !$res ) {
+            Common_Request::response( $model->errno, $model->errmsg );
+        }
+        $aes_key = Yaf_Registry::get('config')->keys->aes_salt;
+        $aes_obj = new Common_Aes($aes_key);
+        // 拼接返回给客户端的数据
+        $data = array(
+            // token => d4ZYxo+v1UXeAjY0olCrmjsXf0JDcHPzyhl82PmPMoM80ndsTMZTtKFxh9070bHi
+            'token' =>  $aes_obj->encrypt( $token . "||" . $uid ),
+            'uid' => $uid,
+            'uname' => $uname
+        );
         /*
         # 改为user_access_token登录
         // 获取session实例
@@ -52,16 +72,14 @@ class UserController extends AbstractController
         */
         // 登录成功，更新数据库相关数据
         $model->updateLoginData($uid);
-        Common_Request::response(0, '', [$uname, $uid] );
+        Common_Request::response(0, '', $data );
     }
 
     /**
      * 用户退出登录接口
      */
     public function logoutAction() {
-        $yaf_session = Yaf_Session::getInstance();
-        $yaf_session->del($this->bis_user);
-        session_destroy();
+        
         Common_Request::response(0, '');
     }
 

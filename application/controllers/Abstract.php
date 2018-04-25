@@ -7,8 +7,9 @@
  */
 class AbstractController extends Yaf_Controller_Abstract
 {
-    // 商家用户session key
-    protected $bis_user = 'bis_account';
+
+    // 存储商家用户信息的成员变量
+    protected $bis_user = [];
 
     protected $headers = [];
 

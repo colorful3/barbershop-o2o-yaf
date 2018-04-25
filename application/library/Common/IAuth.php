@@ -90,4 +90,15 @@ class Common_IAuth
         return true;
     }
 
+    /**
+     * 设置app唯一的登录token
+     * @param int $phone
+     * @return string
+     */
+    public static function setAppLoginToken($phone=0) {
+        $str = md5( uniqid( md5( microtime(true) ), true) );
+        $str = sha1( $str . $phone );
+        return $str;
+    }
+
 }
