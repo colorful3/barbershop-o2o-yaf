@@ -21,12 +21,20 @@ class UserController extends AbstractController
         if( !$uname || !$pwd  ) {
             Common_Request::response(-1004, '用户名或密码不正确');
         }
-        $model = new BisModel();
-        // 开始验证密码是否正确
-        $uid = $model->login($uname, $pwd);
+        $uid = 0;
+        try {
+            $model = new BisModel();
+            // 开始验证密码是否正确
+            $uid = $model->login($uname, $pwd);
+        } catch (\Exception $exception) {
+            Common_Request::response( -1007, $exception->getMessage() );
+        }
         if( !$uid ) {
             Common_Request::response($model->errno, $model->errmsg);
         }
+
+        /*
+        # 改为user_access_token登录
         // 获取session实例
         $yaf_session = Yaf_Session::getInstance();
         // var_dump( $yaf_session->get('bis_account') );exit;
@@ -41,9 +49,10 @@ class UserController extends AbstractController
 
             $yaf_session->set($this->bis_user, self::$current_user);
         }
+        */
         // 登录成功，更新数据库相关数据
         $model->updateLoginData($uid);
-        Common_Request::response(0, '', $uname );
+        Common_Request::response(0, '', [$uname, $uid] );
     }
 
     /**
