@@ -117,6 +117,19 @@ class BisModel
         }
     }
 
+    public function logout( $uid ) {
+        $query = Db_Base::getInstance()->prepare(
+            "UPDATE `bis_account` SET `token_time_out` = ? WHERE `id` = ?"
+        );
+        $ret = $query->execute([date('Y-m-d H:i:s', time() -1 ), $uid]);
+        if( !$ret ) {
+            $this->errno = -1010;
+            $this->errmsg = '退出登录失败';
+        } else {
+            return true;
+        }
+    }
+
     /**
      * 验证用户是否存在
      * @param $uname

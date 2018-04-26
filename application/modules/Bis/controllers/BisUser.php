@@ -1,14 +1,21 @@
 <?php
 /**
- * User.php
+ * BisUser.php
  * Created By Colorful
  * Date:2018/4/24
  * Time:上午11:14
+ * @desc 商家用户控制器
  */
-class UserController extends AbstractController
+class BisUserController extends AbstractController
 {
+    // 模型类对象成员属性
+    private $_obj;
 
-    static $current_user;
+    public function init()
+    {
+        parent::init();
+        $this->_obj = new BisModel();
+    }
 
     /**
      * 商家用户登录接口
@@ -23,26 +30,25 @@ class UserController extends AbstractController
         }
         $uid = 0;
         try {
-            $model = new BisModel();
             // 开始验证密码是否正确
-            $uid = $model->login($uname, $pwd);
+            $uid = $this->_obj->login($uname, $pwd);
         } catch (\Exception $exception) {
             Common_Request::response( -1007, $exception->getMessage() );
         }
         if( !$uid ) {
-            Common_Request::response($model->errno, $model->errmsg);
+            Common_Request::response($this->_obj->errno, $this->_obj->errmsg);
         }
         // 设置token
         $token = Common_IAuth::setAppLoginToken($uname);
         $res = 0;
         try {
             // 根据uid更新用户token
-            $res = $model->setUserToken($token, $uid);
+            $res = $this->_obj->setUserToken($token, $uid);
         } catch (\Exception $exception) {
             Common_Request::response( -1007, $exception->getMessage() );
         }
         if( !$res ) {
-            Common_Request::response( $model->errno, $model->errmsg );
+            Common_Request::response( $this->_obj->errno, $this->_obj->errmsg );
         }
         $aes_key = Yaf_Registry::get('config')->keys->aes_salt;
         $aes_obj = new Common_Aes($aes_key);
@@ -71,15 +77,28 @@ class UserController extends AbstractController
         }
         */
         // 登录成功，更新数据库相关数据
-        $model->updateLoginData($uid);
+        $this->_obj->updateLoginData($uid);
         Common_Request::response(0, '', $data );
     }
 
     /**
      * 用户退出登录接口
      */
-    public function logoutAction() {
-        
+    public function logoutAction()
+    {
+        $uid = $this->getRequest()->getPost('uid', 0);
+        if( !$uid ) {
+            return Common_Request::response(-1011, '未知的退出登录用户，请指定用户id');
+        }
+        $res = 0;
+        try {
+            $res = $this->_obj->logout($uid);
+        } catch (\Exception $exception) {
+            Common_Request::response( -1012, $exception->getMessage() );
+        }
+        if( !$res ) {
+            Common_Request::response( $this->_obj->errno, $this->_obj->errmsg );
+        }
         Common_Request::response(0, '');
     }
 
@@ -115,7 +134,7 @@ class UserController extends AbstractController
     /**
      * 商家用户详情接口
      */
-    public function userInfoAction(){
-        Common_Request::response(0, '', self::$current_user );
+    public function userInfoAction() {
+        Common_Request::response(0, '', $this->bis_user );
     }
 }
