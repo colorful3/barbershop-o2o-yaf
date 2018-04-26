@@ -8,7 +8,7 @@
 
 class IndexController extends AuthBaseController {
 
-    public function indexAction() {
+   public function indexAction() {
         echo 'this is index action in Bis module';
     }
 }

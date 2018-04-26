@@ -21,14 +21,14 @@ class AuthBaseController extends AbstractController
      */
     public function isLogin()
     {
-        if( empty( $this->headers['access_user_token'] ) ) {
+        if( empty( $this->headers['accesstoken'] ) ) {
             return false;
         }
 
         // 实例化aes类
         $aes_obj = new Common_Aes( Yaf_Registry::get('config')->keys->aes_salt );
         // 从header中获取access_user_token并解密
-        $access_user_token = $aes_obj->decrypt($this->headers['access_user_token']);
+        $access_user_token = $aes_obj->decrypt($this->headers['accesstoken']);
         if( empty($access_user_token) ) {
             return false;
         }

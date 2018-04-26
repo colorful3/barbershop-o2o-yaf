@@ -79,7 +79,7 @@ class UserController extends AbstractController
      * 用户退出登录接口
      */
     public function logoutAction() {
-        
+
         Common_Request::response(0, '');
     }
 
