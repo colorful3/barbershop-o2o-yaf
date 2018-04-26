@@ -119,7 +119,7 @@ class BisModel
 
     public function logout( $uid ) {
         $query = Db_Base::getInstance()->prepare(
-            "UPDATE `bis_account` SET `token_time_out` = ? WHERE `id` = ?"
+            "UPDATE `bis_account` SET `token_timeout` = ? WHERE `id` = ?"
         );
         $ret = $query->execute([date('Y-m-d H:i:s', time() -1 ), $uid]);
         if( !$ret ) {
