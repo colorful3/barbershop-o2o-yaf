@@ -4,6 +4,7 @@
  * Created By Colorful
  * Date:2018/4/24
  * Time:上午11:04
+ * @desc 1、接口项目不渲染模板  2、验证sign签名
  */
 class AbstractController extends Yaf_Controller_Abstract
 {
@@ -15,28 +16,34 @@ class AbstractController extends Yaf_Controller_Abstract
 
    public function init()
     {
+        // 1、关闭模板渲染
         Yaf_Dispatcher::getInstance()->disableView();
+
+        // 2、验签算法
+        $this->checkRequestAuth();  // 上线开启 signature签名算法
+
         // $this->testAes();
         // $this->testAes2();
-        $this->checkRequestAuth();  // 上线开启 signature签名算法
     }
 
     public function testAes()
     {
         $data = [
-            'app_name' => 'barbershop',
+            'appname' => 'barbershop',
             'version' => '1.0',
             'time' => Common_Time::getTimeStamp()
         ];
-        // cvSOhzgiflkaB1lAnLXkpKEmuCKa70BAOa/rHNYqek1cWPetrQJeosnxk2/Ld27fUfFTMHjgsqQDsqhZda25Rg==
-        Common_IAuth::setSign($data);
+        // yKf2IarFKCxpbQ8q7Dk7vS/nJ4X4XpdCqDo75qvt7ONUWsdFOCAs5wkFAjqyipiTdD7vBe3cZBJ7Uzf3AYvNLQ==
+        $sign_str = Common_IAuth::setSign($data);
+        Common_Request::response(0, '', $sign_str);
     }
 
     public function testAes2()
     {
         $request = new Common_Request();
         $headers = $request->header();
-        Common_IAuth::checkSignPass($headers);
+        $res = Common_IAuth::checkSignPass($headers);
+        var_dump($res);
     }
 
 
@@ -48,14 +55,14 @@ class AbstractController extends Yaf_Controller_Abstract
         // 获取header
         $request = new Common_Request();
         $headers = $request->header();
-
         // 基础参数校验
         if( empty($headers['sign']) ) {
-            Common_Request::response(-400, 'sign参数未传递');
+            Common_Request::response(400, 'sign参数未传递');
             // throw new ApiException('sign参数未传递', 400);
         }
         // 签名算法
         if( !Common_IAuth::checkSignPass($headers) ) {
+            Common_Request::response(400, '授权码sign验签失败');
             // throw new ApiException('授权码sign验签失败', 400);
         }
 

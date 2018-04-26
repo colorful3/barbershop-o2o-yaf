@@ -4,6 +4,7 @@
  * Created By Colorful
  * Date:2018/4/25
  * Time:上午8:58
+ * @desc 用于验证用户的登录态
  */
 class AuthBaseController extends AbstractController
 {
