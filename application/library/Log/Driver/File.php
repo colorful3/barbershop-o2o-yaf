@@ -3,16 +3,18 @@ class Log_Driver_File
 {
 
     protected $config = [
+        'time_format' => ' c ',
         'single' => false,   // 单日志
         'apart_level' => [],
         'file_size' => 2097152,
-        'path' => '/Application/MAMP/htdocs/study/yaf/runtime/log/',
+        'path' => '',
     ];
 
     protected $writed = [];
 
     public function __construct($config = [])
     {
+        $this->config['path'] = APPLICATION_PATH . '/runtime/log/';
         $this->config = array_merge($this->config, $config);
     }
 
@@ -29,24 +31,24 @@ class Log_Driver_File
             $destination = $this->config['path'] . date('Ym') . '/' . date('d') . '.log';
         }
         $path = dirname($destination);
+        // var_dump($path);exit;
         !is_dir($path) && mkdir($path, 0755, true);
 
         $info = '';
         foreach ($log as $type => $val) {
             $level = '';
             foreach ($val as $msg) {
-                if (!is_string($val)) {
-                    // 此函数返回关于传递给该函数的变量的结构信息，它和 var_dump() 类似，不同的是其返回的表示是合法的 PHP 代码。您可以通过将函数的第二个参数设置为 TRUE，从而返回变量的表示。
+                if (!is_string($msg)) {
                     $msg = var_export($msg, true);
                 }
-                $level .= '[' . $type . ']' . $msg . "\r\n";
+                $level .= '[ ' . $type . ' ] ' . $msg . "\r\n";
             }
-            if (in_array($type, $this->config[''])) {
+            if (in_array($type, $this->config['apart_level'])) {
                 // 独立记录的日志级别
                 if ($this->config['single']) {
-                    $filename = $path . '/' . $type . 'log';
+                    $filename = $path . '/' . $type . '.log';
                 } else {
-                    $filename = $path . '/' . date('d') . '_' . $type . '.log';
+                    $filename = $path . '/' . date('d') . '_' . $type . '' . '.log';
                 }
                 $this->write($level, $filename, true);
             } else {
@@ -72,8 +74,7 @@ class Log_Driver_File
         }
 
         if( empty($this->writed[$destination]) ) {
-            $bool = Yaf_Registry::get('config')->app->log->switch;
-            if( $bool == True ) {
+            if( Yaf_Registry::get('config')->application->debug ) {
                 // 获取基本信息
                 if( isset( $_SERVER['HTTP_HOST'] ) ) {
                     $current_uri = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];

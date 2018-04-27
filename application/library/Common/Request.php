@@ -1,38 +1,31 @@
 <?php
 /**
  * Request.php
- * 接收请求类
+ * @desc 接收请求类
  * Created By Colorful
  * Date:2018/4/24
  * Time:上午11:08
  */
 class Common_Request
 {
+    protected static $_instance = null;
 
-    public static $request = null;
+    protected $server = [];
+    protected $header = array();
 
-    protected $server  = [];
-    protected $header  = [];
-
-    public function __construct()
+    private function __construct()
     {
-        self::$request = new Yaf_Request_Http();
     }
 
-    public static function get( $key, $value ) {
-
+    private function __clone()
+    {
     }
 
-    public static function post( $key, $default = '' ) {
-        if( isset($key) ) {
-            self::$request->getPost( $key );
-            if( isset($default) ) {
-                self::$request->getPost( $key );
-            }
-        } else {
-            self::$request->getPost();
+    static function getInstance() {
+        if( is_null(self::$_instance) ) {
+            self::$_instance = new self();
         }
-        return self::$request;
+        return self::$_instance;
     }
 
     /**
@@ -42,7 +35,7 @@ class Common_Request
      * @param array $data : 数据
      * @param string $type : 返回数据的类型，默认json
      */
-    public static function response($errno, $errmsg = "", $data = [], $type = 'json')
+    static function response($errno, $errmsg = "", $data = [], $type = 'json')
     {
         if( $type == 'json') {
             $rep = array(
@@ -51,6 +44,10 @@ class Common_Request
             );
             if( isset($data) && $data ) {
                 $rep['data'] = $data;
+            }
+            // 如果应用处于调试模式，对返回的数据做日志记录
+            if( Yaf_Registry::get('config')->application->debug ) {
+                Log::record('[ RESPONSE ] ' . var_export( $rep, true), 'info');
             }
             exit( json_encode( $rep ) );
         }

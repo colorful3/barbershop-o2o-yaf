@@ -22,6 +22,11 @@ class AbstractController extends Yaf_Controller_Abstract
         // 2、验签算法
         $this->checkRequestAuth();  // 上线开启 signature签名算法
 
+        if( Yaf_Registry::get('config')->application->debug ) {
+            Log::record('[ HEADER ] ' . var_export( Common_Request::getInstance()->header(), true), 'info');
+            Log::record('[ PARAM ] ' . var_export( $_REQUEST , true), 'info');
+        }
+
         // $this->testAes();
         // $this->testAes2();
     }
@@ -40,8 +45,7 @@ class AbstractController extends Yaf_Controller_Abstract
 
     public function testAes2()
     {
-        $request = new Common_Request();
-        $headers = $request->header();
+        $headers = Common_Request::getInstance()->header();
         $res = Common_IAuth::checkSignPass($headers);
         var_dump($res);
     }
@@ -53,8 +57,7 @@ class AbstractController extends Yaf_Controller_Abstract
     public function checkRequestAuth()
     {
         // 获取header
-        $request = new Common_Request();
-        $headers = $request->header();
+        $headers = Common_Request::getInstance()->header();
         // 基础参数校验
         if( empty($headers['sign']) ) {
             Common_Request::response(400, 'sign参数未传递');

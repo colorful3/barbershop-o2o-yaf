@@ -1,0 +1,150 @@
+---------------------------------------------------------------
+[ 2018-04-27T23:06:04+08:00 ] 127.0.0.1 POST /bis/index/test
+[ info ] yaff.colorful.com/bis/index/test [运行时间：0.000000s][吞吐率：∞req/s] [内存消耗：0.00kb] [文件加载：11]
+[ info ] [ LOG ] INIT File
+[ info ] [ HEADER ] array (
+  'host' => 'yaff.colorful.com',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'content-length' => '267',
+  'accept' => '*/*',
+  'accept-encoding' => 'gzip, deflate',
+  'accesstoken' => 'hSX2l7eK6t1onyobiNqtC8tWD/7JWay3XCOsn9JWOlO4zrLg+gCHbXRaWc5Sv9Sm',
+  'appname' => 'barbershop',
+  'cache-control' => 'no-cache',
+  'content-type' => 'multipart/form-data; boundary=--------------------------083066609009345571074134',
+  'postman-token' => '6615a16f-f704-43ad-8f01-c9c1a3ad5d6f',
+  'sign' => 'Ht0f4tPLcM9YYwZtchaXQVg9AtNFyM0AbQz3NodH4ga\\/SgJ6\\/nS4Av5osbUDFxzNJqReGNvxBipnNfkkSwYJGg==',
+  'x-lantern-version' => '4.5.9',
+)
+[ info ] [ PARAM ] array (
+  'name' => 'cocc',
+  'asd' => 'dd',
+)
+[ info ] [ RESPONSE ] array (
+  'errno' => -1002,
+  'errmsg' => '哈哈哈哈',
+  'data' => 
+  array (
+    'uname' => 'Colorful',
+    'pwd' => '1234098',
+    'ctime' => 0,
+  ),
+)
+---------------------------------------------------------------
+[ 2018-04-27T23:32:21+08:00 ] 127.0.0.1 POST /bis/index/test
+[ info ] yaff.colorful.com/bis/index/test [运行时间：-0.000001s][吞吐率：∞req/s] [内存消耗：0.00kb] [文件加载：11]
+[ info ] [ HEADER ] array (
+  'host' => 'yaff.colorful.com',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'content-length' => '267',
+  'accept' => '*/*',
+  'accept-encoding' => 'gzip, deflate',
+  'accesstoken' => 'hSX2l7eK6t1onyobiNqtC8tWD/7JWay3XCOsn9JWOlO4zrLg+gCHbXRaWc5Sv9Sm',
+  'appname' => 'barbershop',
+  'cache-control' => 'no-cache',
+  'content-type' => 'multipart/form-data; boundary=--------------------------193894365410831181642428',
+  'postman-token' => 'e3a4f15d-176a-413d-a58c-e1aa793081dd',
+  'sign' => 'Ht0f4tPLcM9YYwZtchaXQVg9AtNFyM0AbQz3NodH4ga\\/SgJ6\\/nS4Av5osbUDFxzNJqReGNvxBipnNfkkSwYJGg==',
+  'x-lantern-version' => '4.5.9',
+)
+[ info ] [ LOG ] INIT File
+[ info ] [ PARAM ] array (
+  'name' => 'cocc',
+  'asd' => 'dd',
+)
+[ info ] [ RESPONSE ] array (
+  'errno' => -1002,
+  'errmsg' => '哈哈哈哈',
+  'data' => 
+  array (
+    'uname' => 'Colorful',
+    'pwd' => '1234098',
+    'ctime' => 0,
+  ),
+)
+---------------------------------------------------------------
+[ 2018-04-27T23:37:43+08:00 ] 127.0.0.1 POST /bis/index/test
+[ info ] yaff.colorful.com/bis/index/test [运行时间：0.000000s][吞吐率：∞req/s] [内存消耗：0.00kb] [文件加载：11]
+[ info ] [ HEADER ] array (
+  'host' => 'yaff.colorful.com',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'content-length' => '267',
+  'accept' => '*/*',
+  'accept-encoding' => 'gzip, deflate',
+  'accesstoken' => 'hSX2l7eK6t1onyobiNqtC8tWD/7JWay3XCOsn9JWOlO4zrLg+gCHbXRaWc5Sv9Sm',
+  'appname' => 'barbershop',
+  'cache-control' => 'no-cache',
+  'content-type' => 'multipart/form-data; boundary=--------------------------488422472323782273474082',
+  'postman-token' => '38cefef2-7530-4894-913c-3e4e3f2da35c',
+  'sign' => 'Ht0f4tPLcM9YYwZtchaXQVg9AtNFyM0AbQz3NodH4ga\\/SgJ6\\/nS4Av5osbUDFxzNJqReGNvxBipnNfkkSwYJGg==',
+  'x-lantern-version' => '4.5.9',
+)
+[ info ] [ LOG ] INIT File
+[ info ] [ PARAM ] array (
+  'name' => 'cocc',
+  'asd' => 'dd',
+)
+[ info ] [ RESPONSE ] array (
+  'errno' => -1002,
+  'errmsg' => '哈哈哈哈',
+  'data' => 
+  array (
+    'uname' => 'Colorful',
+    'pwd' => '1234098',
+    'ctime' => 0,
+  ),
+)
+---------------------------------------------------------------
+[ 2018-04-27T23:37:53+08:00 ] 127.0.0.1 POST /bis/bisuser/login
+[ info ] yaff.colorful.com/bis/bisuser/login [运行时间：-0.000001s][吞吐率：∞req/s] [内存消耗：0.00kb] [文件加载：10]
+[ info ] [ HEADER ] array (
+  'host' => 'yaff.colorful.com',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'content-length' => '276',
+  'accept' => '*/*',
+  'accept-encoding' => 'gzip, deflate',
+  'appname' => 'barbershop',
+  'cache-control' => 'no-cache',
+  'content-type' => 'multipart/form-data; boundary=--------------------------760292379222692700460511',
+  'postman-token' => '2f1ef9c0-ff1f-43f3-aae8-b5e739b49d22',
+  'sign' => 'Ht0f4tPLcM9YYwZtchaXQVg9AtNFyM0AbQz3NodH4ga\\/SgJ6\\/nS4Av5osbUDFxzNJqReGNvxBipnNfkkSwYJGg==',
+  'version' => '1.0',
+  'x-lantern-version' => '4.5.9',
+)
+[ info ] [ LOG ] INIT File
+[ info ] [ PARAM ] array (
+  'uname' => 'colorful',
+  'pwd' => '123456',
+)
+---------------------------------------------------------------
+[ 2018-04-27T23:40:04+08:00 ] 127.0.0.1 POST /bis/bisuser/login
+[ info ] yaff.colorful.com/bis/bisuser/login [运行时间：-0.000001s][吞吐率：∞req/s] [内存消耗：0.00kb] [文件加载：10]
+[ info ] [ HEADER ] array (
+  'host' => 'yaff.colorful.com',
+  'user-agent' => 'PostmanRuntime/7.1.1',
+  'content-length' => '271',
+  'accept' => '*/*',
+  'accept-encoding' => 'gzip, deflate',
+  'appname' => 'barbershop',
+  'cache-control' => 'no-cache',
+  'content-type' => 'multipart/form-data; boundary=--------------------------744912299179640894566310',
+  'postman-token' => 'd478e8d0-22be-4d00-a9a6-027c7893f877',
+  'sign' => 'Ht0f4tPLcM9YYwZtchaXQVg9AtNFyM0AbQz3NodH4ga\\/SgJ6\\/nS4Av5osbUDFxzNJqReGNvxBipnNfkkSwYJGg==',
+  'version' => '1.0',
+  'x-lantern-version' => '4.5.9',
+)
+[ info ] [ LOG ] INIT File
+[ info ] [ PARAM ] array (
+  'uname' => 'yzg',
+  'pwd' => '123456',
+)
+[ info ] [ RESPONSE ] array (
+  'errno' => 0,
+  'errmsg' => '',
+  'data' => 
+  array (
+    'token' => 'DtgYHuL7+6JMbaQU0MqVdDUNUYJuvq0mLxFb8PRSbZ36429EcGQU+O+c29Ab1T+8',
+    'uid' => 3,
+    'uname' => 'yzg',
+  ),
+)

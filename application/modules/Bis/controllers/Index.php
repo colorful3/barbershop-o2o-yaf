@@ -20,12 +20,13 @@ class IndexController extends AuthBaseController {
      * 临时测试接口
      */
     public function testAction() {
-       // var_dump( openssl_get_cipher_methods() );
-       $key = 'ColorfulColorful';
-       $obj = new Common_Aes( $key );
-       $res = $obj->encrypt('yzg');
-       $res2 = $obj->decrypt($res);
-       var_dump( $res, $res2 );
+        $arrConfig = Yaf_Application::app()->getConfig();
+        $data = [
+            'uname' => 'Colorful',
+            'pwd' => '1234098',
+            'ctime' => 0
+        ];
+        Common_Request::response(-1002, '哈哈哈哈', $data);
     }
 
 }

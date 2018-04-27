@@ -20,18 +20,17 @@ class BisuserController extends AbstractController
     /**
      * 商家用户登录接口
      */
-    public function loginAction() {
-        // var_dump($data);exit;
-        $uname = $this->getRequest()->getPost('uname', ''); // 可以是用户名、邮箱、或者手机号
-        // $email = $this->getRequest()->getPost('email', '');
-        $pwd = $this->getRequest()->getPost('pwd', '');
-        if( !$uname || !$pwd  ) {
+    public function loginAction()
+    {
+        // 得到post的数据
+        $postData = $this->getRequest()->getPost();
+        if( !isset($postData['uname']) || !isset($postData['pwd'])  ) {
             Common_Request::response(-1004, '用户名或密码不正确');
         }
         $uid = 0;
         try {
             // 开始验证密码是否正确
-            $uid = $this->_obj->login($uname, $pwd);
+            $uid = $this->_obj->login($postData['uname'], $postData['pwd']);
         } catch (\Exception $exception) {
             Common_Request::response( -1007, $exception->getMessage() );
         }
@@ -39,7 +38,7 @@ class BisuserController extends AbstractController
             Common_Request::response($this->_obj->errno, $this->_obj->errmsg);
         }
         // 设置token
-        $token = Common_IAuth::setAppLoginToken($uname);
+        $token = Common_IAuth::setAppLoginToken($postData['uname']);
         $res = 0;
         try {
             // 根据uid更新用户token
@@ -57,7 +56,7 @@ class BisuserController extends AbstractController
             // token => d4ZYxo+v1UXeAjY0olCrmjsXf0JDcHPzyhl82PmPMoM80ndsTMZTtKFxh9070bHi
             'token' =>  $aes_obj->encrypt( $token . "||" . $uid ),
             'uid' => $uid,
-            'uname' => $uname
+            'uname' => $postData['uname']
         );
         /*
         # 改为user_access_token登录
