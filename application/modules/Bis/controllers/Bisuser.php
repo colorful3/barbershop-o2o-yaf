@@ -1,12 +1,12 @@
 <?php
 /**
- * Bisuser.php
+ * BisUser.php
  * Created By Colorful
  * Date:2018/4/24
  * Time:上午11:14
  * @desc 商家用户控制器
  */
-class BisuserController extends AbstractController
+class BisUserController extends AbstractController
 {
     // 模型类对象成员属性
     private $_obj;
@@ -54,7 +54,7 @@ class BisuserController extends AbstractController
         $aes_obj = new Common_Aes($aes_key);
         // 拼接返回给客户端的数据
         $data = array(
-            // token => hSX2l7eK6t1onyobiNqtC8tWD/7JWay3XCOsn9JWOlO4zrLg+gCHbXRaWc5Sv9Sm
+            // token => d4ZYxo+v1UXeAjY0olCrmjsXf0JDcHPzyhl82PmPMoM80ndsTMZTtKFxh9070bHi
             'token' =>  $aes_obj->encrypt( $token . "||" . $uid ),
             'uid' => $uid,
             'uname' => $uname
@@ -79,6 +79,32 @@ class BisuserController extends AbstractController
         // 登录成功，更新数据库相关数据
         $this->_obj->updateLoginData($uid);
         Common_Request::response(0, '', $data );
+    }
+
+    /**
+     * 用户退出登录接口
+     */
+<<<<<<< HEAD:application/modules/Bis/controllers/User.php
+    public function logoutAction() {
+
+=======
+    public function logoutAction()
+    {
+        $uid = $this->getRequest()->getPost('uid', 0);
+        if( !$uid ) {
+            return Common_Request::response(-1011, '未知的退出登录用户，请指定用户id');
+        }
+        $res = 0;
+        try {
+            $res = $this->_obj->logout($uid);
+        } catch (\Exception $exception) {
+            Common_Request::response( -1012, $exception->getMessage() );
+        }
+        if( !$res ) {
+            Common_Request::response( $this->_obj->errno, $this->_obj->errmsg );
+        }
+>>>>>>> 9e9f49c68338424ab29c16b5bc67f7791acd6ebf:application/modules/Bis/controllers/BisUser.php
+        Common_Request::response(0, '');
     }
 
     /**
@@ -108,24 +134,6 @@ class BisuserController extends AbstractController
         } else {
             Common_Request::response(0, '', $uname);
         }
-    }
-
-    public function logoutAction()
-    {
-        $uid = $this->getRequest()->getPost('uid', 0);
-        if( !$uid  ) {
-            return Common_Request::response(-1011, '未知的退出登录用户，请指定用户id');
-        }
-        $res = 0;
-        try {
-            $res = $this->_obj->logout($uid);
-        } catch (\Exception $exception) {
-            Common_Request::response( -1012, $exception->getMessage()  );
-        }
-        if( !$res  ) {
-            Common_Request::response( $this->_obj->errno, $this->_obj->errmsg  );
-        }
-        Common_Request::response(0, '');
     }
 
     /**
