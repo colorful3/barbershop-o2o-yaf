@@ -1,12 +1,12 @@
 <?php
 /**
- * BisUser.php
+ * Bisuser.php
  * Created By Colorful
  * Date:2018/4/24
  * Time:上午11:14
  * @desc 商家用户控制器
  */
-class BisUserController extends AbstractController
+class BisuserController extends AbstractController
 {
     // 模型类对象成员属性
     private $_obj;
@@ -84,10 +84,6 @@ class BisUserController extends AbstractController
     /**
      * 用户退出登录接口
      */
-<<<<<<< HEAD:application/modules/Bis/controllers/User.php
-    public function logoutAction() {
-
-=======
     public function logoutAction()
     {
         $uid = $this->getRequest()->getPost('uid', 0);
@@ -103,8 +99,6 @@ class BisUserController extends AbstractController
         if( !$res ) {
             Common_Request::response( $this->_obj->errno, $this->_obj->errmsg );
         }
->>>>>>> 9e9f49c68338424ab29c16b5bc67f7791acd6ebf:application/modules/Bis/controllers/BisUser.php
-        Common_Request::response(0, '');
     }
 
     /**
