@@ -8,7 +8,16 @@
 
 class IndexController extends AuthBaseController {
 
-   public function indexAction() {
+    public function indexAction() {
         echo 'this is index action in Bis module';
     }
+
+    public function testAction() {
+        $key = 'Colorful';
+        $obj = new Common_Aes( $key  );
+        $res = $obj->encrypt('yzg');
+        $res2 = $obj->decrypt($res);
+        var_dump( $res, $res2  );
+    }
+
 }
