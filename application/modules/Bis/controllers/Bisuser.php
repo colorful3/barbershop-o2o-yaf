@@ -54,7 +54,7 @@ class BisuserController extends AbstractController
         $aes_obj = new Common_Aes($aes_key);
         // 拼接返回给客户端的数据
         $data = array(
-            // token => d4ZYxo+v1UXeAjY0olCrmjsXf0JDcHPzyhl82PmPMoM80ndsTMZTtKFxh9070bHi
+            // token => hSX2l7eK6t1onyobiNqtC8tWD/7JWay3XCOsn9JWOlO4zrLg+gCHbXRaWc5Sv9Sm
             'token' =>  $aes_obj->encrypt( $token . "||" . $uid ),
             'uid' => $uid,
             'uname' => $uname

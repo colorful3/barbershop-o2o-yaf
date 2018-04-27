@@ -33,7 +33,7 @@ class AbstractController extends Yaf_Controller_Abstract
             'version' => '1.0',
             'time' => Common_Time::getTimeStamp()
         ];
-        // yKf2IarFKCxpbQ8q7Dk7vS/nJ4X4XpdCqDo75qvt7ONUWsdFOCAs5wkFAjqyipiTdD7vBe3cZBJ7Uzf3AYvNLQ==
+        // Ht0f4tPLcM9YYwZtchaXQVg9AtNFyM0AbQz3NodH4ga\/SgJ6\/nS4Av5osbUDFxzNJqReGNvxBipnNfkkSwYJGg==
         $sign_str = Common_IAuth::setSign($data);
         Common_Request::response(0, '', $sign_str);
     }

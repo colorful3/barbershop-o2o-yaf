@@ -59,7 +59,7 @@ class Common_Aes
      */
     public function encrypt($data)
     {
-        return openssl_encrypt($data, $this->method, $this->secret_key, $this->options, $this->iv);
+        return @openssl_encrypt($data, $this->method, $this->secret_key, $this->options, $this->iv);
     }
 
     /**
