@@ -87,7 +87,7 @@ class BisuserController extends AbstractController
     {
         $uid = $this->getRequest()->getPost('uid', 0);
         if( !$uid ) {
-            return Common_Request::response(-1011, '未知的退出登录用户，请指定用户id');
+            Common_Request::response(-1011, '未知的退出登录用户，请指定用户id');
         }
         $res = 0;
         try {
@@ -98,6 +98,7 @@ class BisuserController extends AbstractController
         if( !$res ) {
             Common_Request::response( $this->_obj->errno, $this->_obj->errmsg );
         }
+        Common_Request::response(0, '');
     }
 
     /**

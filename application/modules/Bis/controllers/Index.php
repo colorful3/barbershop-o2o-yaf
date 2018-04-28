@@ -1,4 +1,8 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
 /**
  * Index.php
  * Created By Colorful
@@ -19,14 +23,9 @@ class IndexController extends AuthBaseController {
     /**
      * 临时测试接口
      */
-    public function testAction() {
-        $arrConfig = Yaf_Application::app()->getConfig();
-        $data = [
-            'uname' => 'Colorful',
-            'pwd' => '1234098',
-            'ctime' => 0
-        ];
-        Common_Request::response(-1002, '哈哈哈哈', $data);
+    public function testAction()
+    {
+
     }
 
 }
