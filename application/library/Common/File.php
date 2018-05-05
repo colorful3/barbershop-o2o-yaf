@@ -385,16 +385,16 @@ class Common_File extends SplFileObject
             } else {
                 switch ($this->rule) {
                     case 'date':
-                        $savename = date('Ymd') . DS . md5(microtime(true));
+                        $savename = date('Ymd') . '/' . md5(microtime(true));
                         break;
                     default:
                         if (in_array($this->rule, hash_algos())) {
                             $hash     = $this->hash($this->rule);
-                            $savename = substr($hash, 0, 2) . DS . substr($hash, 2);
+                            $savename = substr($hash, 0, 2) . '/' . substr($hash, 2);
                         } elseif (is_callable($this->rule)) {
                             $savename = call_user_func($this->rule);
                         } else {
-                            $savename = date('Ymd') . DS . md5(microtime(true));
+                            $savename = date('Ymd') . '/' . md5(microtime(true));
                         }
                 }
             }
