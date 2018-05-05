@@ -21,9 +21,59 @@ class Common_Request
     {
     }
 
-    static function getInstance() {
-        if( is_null(self::$_instance) ) {
-            self::$_instance = new self();
+    /**
+     * 根据请求类型获取请求参数
+     * @param $key : 参数名
+     * @param null $default : 默认值
+     * @param null $type    : 请求类型
+     * @return null|string
+     */
+    static function request( $key, $default = null, $type = null )
+    {
+        if( $type == 'get' ) {
+            $result = isset($_GET[$key]) ? trim($_GET[$key]) : null;
+        } else if( $type == 'post' ) {
+            $result = isset( $_POST[$key] ) ? trim( $_POST[$key] ) : null;
+        } else {
+            $result = isset( $_REQUEST[$key] ) ? trim( $_REQUEST[$key] ) : null;
+        }
+        if( $default != null && $result == null ) {
+            $result = $default;
+        }
+        return $result;
+    }
+
+    /**
+     * 获取get请求参数
+     * @param $key
+     * @param null $default
+     * @return null|string
+     */
+    static function getRequest( $key, $default = null )
+    {
+        return self::request( $key, $default, 'get' );
+    }
+
+    /**
+     * 获取post请求参数
+     * @param $key
+     * @param null $default
+     * @return null|string
+     */
+    static function postRequest( $key, $default = null )
+    {
+        return self::request( $key, $default, 'post' );
+    }
+
+    /**
+     * 单利接口
+     * @param array $options
+     * @return null|static
+     */
+    public static function getInstance($options = [])
+    {
+        if (is_null(self::$_instance)) {
+            self::$_instance = new static($options);
         }
         return self::$_instance;
     }
@@ -35,7 +85,7 @@ class Common_Request
      * @param array $data : 数据
      * @param string $type : 返回数据的类型，默认json
      */
-    static function response($errno, $errmsg = "", $data = [], $type = 'json')
+    static function response($errno = 0, $errmsg = "", $data = [], $type = 'json')
     {
         if( $type == 'json') {
             $rep = array(
@@ -127,6 +177,67 @@ class Common_Request
         $long = sprintf("%u", ip2long($ip));
         $ip   = $long ? [$ip, $long] : ['0.0.0.0', 0];
         return $ip[$type];
+    }
+
+
+    /**
+     * 获取上传的文件信息
+     * @access public
+     * @param string|array $name 名称
+     * @return null|array|\\File
+     */
+    public function file($name = '')
+    {
+        if (empty($this->file)) {
+            $this->file = isset($_FILES) ? $_FILES : [];
+        }
+        if (is_array($name)) {
+            return $this->file = array_merge($this->file, $name);
+        }
+        $files = $this->file;
+        if (!empty($files)) {
+            // 处理上传文件
+            $array = [];
+            foreach ($files as $key => $file) {
+                if (is_array($file['name'])) {
+                    $item  = [];
+                    $keys  = array_keys($file);
+                    $count = count($file['name']);
+                    for ($i = 0; $i < $count; $i++) {
+                        if (empty($file['tmp_name'][$i]) || !is_file($file['tmp_name'][$i])) {
+                            continue;
+                        }
+                        $temp['key'] = $key;
+                        foreach ($keys as $_key) {
+                            $temp[$_key] = $file[$_key][$i];
+                        }
+                        $item[] = (new Common_File($temp['tmp_name']))->setUploadInfo($temp);
+                    }
+                    $array[$key] = $item;
+                } else {
+                    if ($file instanceof Common_File) {
+                        $array[$key] = $file;
+                    } else {
+                        if (empty($file['tmp_name']) || !is_file($file['tmp_name'])) {
+                            continue;
+                        }
+                        $array[$key] = (new Common_File($file['tmp_name']))->setUploadInfo($file);
+                    }
+                }
+            }
+            if (strpos($name, '.')) {
+                list($name, $sub) = explode('.', $name);
+            }
+            if ('' === $name) {
+                // 获取全部文件
+                return $array;
+            } elseif (isset($sub) && isset($array[$name][$sub])) {
+                return $array[$name][$sub];
+            } elseif (isset($array[$name])) {
+                return $array[$name];
+            }
+        }
+        return;
     }
 
 }

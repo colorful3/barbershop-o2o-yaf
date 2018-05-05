@@ -1,8 +1,4 @@
 <?php
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
 /**
  * Index.php
  * Created By Colorful
@@ -25,7 +21,6 @@ class IndexController extends AuthBaseController {
      */
     public function testAction()
     {
-
     }
 
 }

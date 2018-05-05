@@ -25,7 +25,8 @@ class Common_IAuth
      * @param int $length
      * @return string
      */
-    static function randSalt($length = 32) {
+    static function randSalt($length = 32)
+    {
         $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*';
         $salt = '';
         for($i=0;$i<$length;$i++) {
@@ -39,7 +40,8 @@ class Common_IAuth
      * @param array $data
      * @return string
      */
-    public static function setSign($data=[]) {
+    public static function setSign($data=[])
+    {
         // 1、对数组进行按照key值进行字典排序
         ksort($data);
         // 2、生成query字符串
@@ -96,7 +98,8 @@ class Common_IAuth
      * @param int $phone
      * @return string
      */
-    public static function setAppLoginToken($phone=0) {
+    public static function setAppLoginToken($phone=0)
+    {
         $str = md5( uniqid( md5( microtime(true) ), true) );
         $str = sha1( $str . $phone );
         return $str;

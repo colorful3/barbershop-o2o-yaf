@@ -63,7 +63,7 @@ class MailModel {
             $mail->send();
             return true;
         } catch (Exception $e) {
-            // echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+            echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
         }
         $this->errno = -3003;
         $this->errmsg = "发送邮件失败";
