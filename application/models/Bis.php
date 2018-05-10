@@ -18,8 +18,7 @@ class BisModel
     public function add($data) {
         $res = $this->checkExists($data[0], $data[3]);
         if(!$res) {
-            $this->errno = -1002;
-            $this->errmsg = '该用户已存在，请重新输入用户名';
+            list($this->errno, $this->errmsg) = Err_Map::get(1002);
             return false;
         }
         $query = Db_Base::getInstance()->prepare(
@@ -30,8 +29,7 @@ class BisModel
         // var_dump($data);exit;
         $ret = $query->execute( $data );
         if(!$ret) {
-            $this->errno = -1003;
-            $this->errmsg = "插入数据失败";
+            list( $this->errno, $this->errmsg ) = Err_Map::get( 1003 );
             return false;
         }
         return (int)Db_Base::getInstance()->lastInsertId();
@@ -43,14 +41,12 @@ class BisModel
         $query->execute([$uname, $uname, $uname]);
         $user_info = $query->fetchAll();
         if( !$user_info || $user_info[0]['status'] != 'normal' ) {
-            $this->errno = -1005;
-            $this->errmsg = '没有此用户或用户状态不合法';
+            list( $this->errno, $this->errmsg ) = Err_Map::get( 1005 );
             return false;
         }
 
         if( Common_IAuth::pwdEncode($pwd, $user_info[0]['salt']) != $user_info[0]['pwd'] ) {
-            $this->errno = -1006;
-            $this->errmsg = "用户名或密码不正确";
+            list( $this->errno, $this->errmsg ) = Err_Map::get(1006);
             return false;
         }
         return intval( $user_info[0]['id'] );
@@ -87,8 +83,7 @@ class BisModel
         );
         $ret = $query->execute([$token, date('Y-m-d H:i:s', time() + 604800 ), $uid]);
         if( !$ret ) {
-            $this->errno = -1008;
-            $this->errmsg = '设置token失败';
+            list( $this->errno, $this->errmsg ) = Err_Map::get( 1007 );
             return false;
         } else {
             return true;
@@ -109,8 +104,7 @@ class BisModel
         $query->execute([$token, $uid]);
         $res = $query->fetchAll();
         if( !$res || $res[0]['status'] != 'normal' ) {
-            $this->errno = -1009;
-            $this->errmsg = '获取用户失败';
+            list( $this->errno, $this->errmsg ) = Err_Map::get( 1008 );
             return false;
         } else {
             return $res[0];
@@ -123,8 +117,7 @@ class BisModel
         );
         $ret = $query->execute([date('Y-m-d H:i:s', time() -1 ), $uid]);
         if( !$ret ) {
-            $this->errno = -1010;
-            $this->errmsg = '退出登录失败';
+            list( $this->errno, $this->errmsg ) = Err_Map::get( 1009 );
         } else {
             return true;
         }

@@ -25,14 +25,14 @@ class BisuserController extends AbstractController
         // 得到post的数据
         $postData = $this->getRequest()->getPost();
         if( !isset($postData['uname']) || !isset($postData['pwd'])  ) {
-            Common_Request::response(-1004, '用户名或密码不正确');
+            Common_Request::response( Err_Map::get(1004)[0], Err_Map::get(1004)[1] );
         }
         $uid = 0;
         try {
             // 开始验证密码是否正确
             $uid = $this->_obj->login($postData['uname'], $postData['pwd']);
         } catch (\Exception $exception) {
-            Common_Request::response( -1007, $exception->getMessage() );
+            Common_Request::response( -1, $exception->getMessage() );
         }
         if( !$uid ) {
             Common_Request::response($this->_obj->errno, $this->_obj->errmsg);
@@ -44,7 +44,7 @@ class BisuserController extends AbstractController
             // 根据uid更新用户token
             $res = $this->_obj->setUserToken($token, $uid);
         } catch (\Exception $exception) {
-            Common_Request::response( -1007, $exception->getMessage() );
+            Common_Request::response( -1, $exception->getMessage() );
         }
         if( !$res ) {
             Common_Request::response( $this->_obj->errno, $this->_obj->errmsg );
@@ -87,13 +87,13 @@ class BisuserController extends AbstractController
     {
         $uid = $this->getRequest()->getPost('uid', 0);
         if( !$uid ) {
-            Common_Request::response(-1011, '未知的退出登录用户，请指定用户id');
+            Common_Request::response( Err_Map::get(1010)[0] , Err_Map::get(1010)[1] );
         }
         $res = 0;
         try {
             $res = $this->_obj->logout($uid);
         } catch (\Exception $exception) {
-            Common_Request::response( -1012, $exception->getMessage() );
+            Common_Request::response( -1, $exception->getMessage() );
         }
         if( !$res ) {
             Common_Request::response( $this->_obj->errno, $this->_obj->errmsg );
@@ -110,7 +110,7 @@ class BisuserController extends AbstractController
         $pwd = $this->getRequest()->getPost('pwd', '');
         $email = $this->getRequest()->getPost('email', '');
         if( !$uname || !$pwd || !$email) {
-            Common_Request::response(-1001, '参数传递不正确');
+            Common_Request::response( Err_Map::get(1001)[0], Err_Map::get(1001)[1] );
         }
         // 生成密码盐
         $salt = Common_IAuth::randSalt(32);
