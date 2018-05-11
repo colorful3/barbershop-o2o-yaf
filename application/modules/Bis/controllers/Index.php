@@ -22,12 +22,14 @@ class IndexController extends AuthBaseController {
     public function testAction()
     {
         $redis = Common_Cache::getInstance();
+
         $redis->set('demo', 'demo');
         $info = $redis->get('demo');
         var_dump($info);
-        $redis->delete('demo');
-        $info = $redis->get('demo');
+        $redis->set('time', time(), 30);
+        $info = $redis->get('time');
         var_dump($info);
+
     }
 
 }

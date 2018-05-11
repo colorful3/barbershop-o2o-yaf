@@ -28,8 +28,8 @@
       <file leaf-file-name="Index.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/application/modules/Bis/controllers/Index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+            <state relative-caret-position="550">
+              <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -38,8 +38,8 @@
       <file leaf-file-name="application.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/conf/application.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="29" />
+            <state relative-caret-position="250">
+              <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -110,7 +110,6 @@
         <option value="$PROJECT_DIR$/runtime/log/201804/27.log" />
         <option value="$PROJECT_DIR$/application/controllers/Abstract.php" />
         <option value="$PROJECT_DIR$/application/Bootstrap.php" />
-        <option value="$PROJECT_DIR$/conf/application.ini" />
         <option value="$PROJECT_DIR$/application/models/Mail.php" />
         <option value="$PROJECT_DIR$/application/modules/Api/controllers/Mail.php" />
         <option value="$PROJECT_DIR$/application/library/Common/Upload.php" />
@@ -124,6 +123,7 @@
         <option value="$PROJECT_DIR$/application/models/Bis.php" />
         <option value="$PROJECT_DIR$/public/index.php" />
         <option value="$PROJECT_DIR$/application/library/Common/Cache.php" />
+        <option value="$PROJECT_DIR$/conf/application.ini" />
         <option value="$PROJECT_DIR$/application/modules/Bis/controllers/Index.php" />
       </list>
     </option>
@@ -385,12 +385,12 @@
       <workItem from="1524611807582" duration="24345000" />
       <workItem from="1524846347134" duration="17321000" />
       <workItem from="1525911194199" duration="2772000" />
-      <workItem from="1526017025007" duration="3320000" />
+      <workItem from="1526017025007" duration="3914000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87229000" />
+    <option name="totallyTimeSpent" value="87823000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -718,14 +718,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/conf/application.ini">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="17" column="29" lean-forward="false" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/application/library/Common/Cache.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="218">
@@ -734,10 +726,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/conf/application.ini">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="16" column="46" lean-forward="false" selection-start-line="16" selection-start-column="46" selection-end-line="16" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/modules/Bis/controllers/Index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="29" column="24" lean-forward="true" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+        <state relative-caret-position="550">
+          <caret line="30" column="6" lean-forward="true" selection-start-line="30" selection-start-column="6" selection-end-line="30" selection-end-column="6" />
           <folding />
         </state>
       </provider>
