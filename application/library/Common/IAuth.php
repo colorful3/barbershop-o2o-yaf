@@ -70,26 +70,19 @@ class Common_IAuth
         if(!is_array($arr) || empty($arr['appname']) || $arr['appname'] != $data['appname'] ) {
             return false;
         }
-
-
-        /*
-
-        // 此处上线后开启
-        // 时间有效性校验
-        $sign_time = Yaf_Registry::get('config')->time->sign_time;
-
-        if (time() - ceil($arr['time'] / 1000) > $sign_time ) {
-            return false;
+        if( !Yaf_Registry::get('config')->application->debug ) { // debug模式关闭的时候才开启时间有效性校验，方便平时调试
+            // 时间有效性校验，默认有效时间10s
+            $sign_time = Yaf_Registry::get('config')->time->sign_time;
+            if (time() - ceil($arr['time'] / 1000) > $sign_time) {
+                return false;
+            }
+            // sign唯一性判断
+            $signure = Common_Cache::getInstance()->get( $data['sign'] );
+            if( !$signure ) {
+                return false;
+            }
         }
-
-        // 唯一性判断
-        $signure = Common_Cache::getInstance()->get( $data['sign'] );
-        if( $signure ) {
-            return false;
-        }
-
-        */
-
+        
         return true;
     }
 

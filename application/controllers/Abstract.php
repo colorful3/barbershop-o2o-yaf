@@ -69,6 +69,13 @@ class AbstractController extends Yaf_Controller_Abstract
             // throw new ApiException('授权码sign验签失败', 400);
         }
 
+        if( !Yaf_Registry::get('config')->application->debug ) {
+            try {
+                Common_Cache::getInstance()->set($headers['sign'], 1, Yaf_Registry::get('config')->time->sign_cache_time);
+            } catch (Exception $exception) {
+                // TODO 记录错误日志
+            }
+        }
         /*
         // sign唯一性  1、文件缓存 2、mysql 3、redis
         Common_Cache::getInstance()->set( $headers['sign'], 1, Yaf_Registry::get('config')->time->sign_cache_time );
