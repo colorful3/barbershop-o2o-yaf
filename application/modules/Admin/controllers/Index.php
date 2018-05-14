@@ -28,7 +28,7 @@ class IndexController extends AdminBaseController
      */
     public function logoutAction()
     {
-        
+
     }
 
 }
