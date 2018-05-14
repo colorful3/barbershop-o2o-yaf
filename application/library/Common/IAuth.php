@@ -82,7 +82,7 @@ class Common_IAuth
                 return false;
             }
         }
-        
+
         return true;
     }
 
